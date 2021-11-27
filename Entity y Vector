@@ -1,0 +1,26 @@
+--Trabajo en clase
+
+entity Ejemplo1 is
+port(a,b,c,d,e,f,g,h: in bit
+	F0: out bit):
+end Ejemplo1;
+
+entity Ejemplo2 is
+port(A3,A2,A1,A0,B3,B2,B1,B0: in bit;
+	S3,S2,S1,S0: out bit;
+	C3,C2,C1,C0: inout bit):
+end Ejemplo2;
+
+entity Control is
+port (Q: in bit_vector (3 downto 0);
+F: out bit_vector (0 ascendence to 7));
+end Control
+
+Library ieee;
+use ieee.std_logic_1164.all;
+use work.std_arith.all
+
+entity Sumador is
+port (A,B in std_logic_vector (0 to 1);
+Suma: out std_logic_vector (0 to 1));
+end Sumador;
