@@ -1,0 +1,36 @@
+end decodificador;
+
+architechture demodecbin of decbin is
+begin
+with dec select
+seg <= '0000' when '1000000000'
+       '0001' when '0100000000'
+       '0010' when '0010000000'
+       '0011' when '0001000000'
+       '0100' when '0000100000'
+       '0101' when '0000010000'
+       '0110' when '0000001000'
+       '0111' when '0000000100'
+       '1000' when '0000000010'
+       '1001' when '0000000001'
+end demodecbin;
+
+entity decodificador is
+port(A: in std_logic_vector (3 downto 0);
+D: out std_logic_vector (6 downto 0);
+end decodificador;
+
+architechture demodecodificador of decodificador is
+begin
+with A select
+D <=   '0000001' when '0000'
+       '1001111' when '0001'
+       '0010010' when '0010'
+       '0000110' when '0011'
+       '1001100' when '0100'
+       '0100100' when '0101'
+       '1100000' when '0110'
+       '0001110' when '0111'
+       '0000000' when '1000'
+       '0000100' when '1001'
+end demodecodificador;
